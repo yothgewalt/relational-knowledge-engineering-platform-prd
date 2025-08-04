@@ -20,20 +20,9 @@
 %floatfix,
 ]{revtex4-2}
 
-\usepackage{graphicx}% Include figure files
-\usepackage{dcolumn}% Align table columns on decimal point
-\usepackage{bm}% bold math
-%\usepackage{hyperref}% add hypertext capabilities
-%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
-%\linenumbers\relax % Commence numbering lines
-
-%\usepackage[showframe,%Uncomment any one of the following lines to test 
-%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
-%%text={7in,10in},centering,
-%%margin=1.5in,
-%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
-%%height=10in,a5paper,hmargin={3cm,0.8in},
-%]{geometry}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
 
 \begin{document}
 
@@ -107,6 +96,8 @@ The platform aims to:
 \end{itemize}
 \end{description}
 
+\vspace{1cm}
+
 \subsection{\label{sec:graph_viewer}Graph Viewer}
 \begin{description}
 \item[Purpose] Display and interact with the network graph.
@@ -151,22 +142,31 @@ The platform aims to:
 
 \subsection{\label{sec:frontend}Frontend}
 \begin{itemize}
-\item \textbf{Framework}: React.js for a dynamic, interactive interface.
-\item \textbf{Graph Visualization}: Cytoscape.js for rendering and interacting with the network graph.
+\item \textbf{Framework}: Next.ts (TypeScript) for a dynamic, interactive interface.
+\item \textbf{Graph Visualization}: Reagraph for rendering and interacting with the network graph.
 \item \textbf{Design}: Responsive layout compatible with desktop and mobile browsers.
 \end{itemize}
 
 \subsection{\label{sec:backend}Backend}
 \begin{itemize}
-\item \textbf{Framework}: Python with Django for robust server-side logic.
-\item \textbf{File Processing}: PyPDF2 or pdfplumber for extracting text from PDFs.
+\item \textbf{Framework}: Go or Python for robust server-side logic.
 \item \textbf{NLP}: spaCy or transformers for entity and relationship extraction.
 \end{itemize}
 
 \subsection{\label{sec:database}Database}
 \begin{itemize}
-\item \textbf{Type}: Neo4j graph database for storing and querying knowledge relationships.
+\item \textbf{Graph Database}: Neo4j graph database for storing and querying knowledge relationships.
+\item \textbf{Vector Database}: Qdrant for storing and querying document embeddings and context for LLM memory.
+\item \textbf{General Database}: MongoDB for general-purpose data storage (e.g., user accounts, settings, metadata).
+\item \textbf{Cache Database}: DragonflyDB for caching and pub/sub messaging.
 \item \textbf{Metadata}: Store node/edge details (e.g., text sentences) alongside graph structure.
+\end{itemize}
+
+\subsection{\label{sec:file_storage}File Storage}
+\begin{itemize}
+\item \textbf{Object Storage}: MinIO for storing all uploaded files (PDFs, documents) with S3-compatible API.
+\item \textbf{File Management}: Secure file upload, storage, and retrieval with proper access controls.
+\item \textbf{Backup}: Automated backup and versioning of stored files.
 \end{itemize}
 
 \subsection{\label{sec:llm_integration}LLM Integration}
@@ -183,7 +183,7 @@ The platform aims to:
 
 \subsection{\label{sec:scalability}Scalability}
 \begin{itemize}
-\item \textbf{Infrastructure}: Cloud hosting (e.g., AWS) to support multiple users and large files.
+\item \textbf{Infrastructure}: Cloud hosting (e.g., XVER) to support multiple users and large files.
 \item \textbf{Optimization}: Efficient graph generation and querying for performance.
 \end{itemize}
 
@@ -225,7 +225,5 @@ This document provides a comprehensive Product Requirement Document (PRD) for th
 \begin{acknowledgments}
 This project is developed as part of a bachelor's thesis at King Mongkut's University of Technology North Bangkok, Faculty of Industrial and Technology Management.
 \end{acknowledgments}
-
-\bibliography{mainNotes}% Produces the bibliography via BibTeX.
 
 \end{document}
